@@ -1,0 +1,18 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="SWD_PU">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>Models.Account</class>
+        <class>Models.Patient</class>
+        <class>Models.PatientRecord</class>
+        <class>Models.PatientDailyReport</class>
+        <!-- Add all other entity classes here -->
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlserver://localhost;databaseName=SWD"/>
+            <property name="jakarta.persistence.jdbc.user" value="your_username"/>
+            <property name="jakarta.persistence.jdbc.password" value="your_password"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
